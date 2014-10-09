@@ -1,0 +1,23 @@
+{
+  "name": "watcher",
+  "version": "1.0.0",
+  "description": "Execute a given command whenever the file system changes.",
+  "bin": {
+    "watcher": "bin/watcher"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gummesson/watcher.git"
+  },
+  "author": "Ellen Gummesson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gummesson/watcher/issues"
+  },
+  "homepage": "https://github.com/gummesson/watcher",
+  "dependencies": {
+    "chalk": "^0.5.1",
+    "chokidar": "^0.9.0",
+    "minimist": "^1.1.0"
+  }
+}

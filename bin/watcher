@@ -1,0 +1,30 @@
+#!/usr/bin/env node
+
+/* Modules */
+
+var exec     = require('child_process').exec;
+var log      = require('util').log;
+var argv     = require('minimist')(process.argv.slice(2));
+var chokidar = require('chokidar');
+var chalk    = require('chalk');
+
+/* Parser */
+
+var path    = (argv.p || argv.path);
+var command = (argv.e || argv.exec);
+
+/* Watcher */
+
+var options = { persistent: true, ignoreInitial: true };
+var watcher = chokidar.watch(path, options);
+
+watcher.on('all', function() {
+  exec(command, function(err) {
+    if (err) { throw err; }
+    log(chalk.green('OK'));
+  });
+});
+
+watcher.on('error', function(err) {
+  console.error(chalk.red('Error'), err);
+});
