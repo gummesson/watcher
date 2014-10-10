@@ -17,12 +17,8 @@ var command = (argv.e || argv.exec);
 
 gaze(pattern, function(err) {
   if (err) { throw err; }
-  this.on('ready', function() {
-    run();
-  });
-  this.on('all', function() {
-    run();
-  });
+  this.on('ready', run);
+  this.on('all', run);
 });
 
 function run() {
