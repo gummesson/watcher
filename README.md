@@ -11,7 +11,7 @@ npm install --global gummesson/watcher
 ## Usage
 
 ~~~ text
-watcher --path '<directory|file>' --exec '<command>'
+watcher --pattern '<pattern>' --exec '<command>'
 ~~~
 
 ## License
